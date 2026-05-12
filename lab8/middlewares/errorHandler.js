@@ -25,7 +25,7 @@ module.exports = (err, req, res, next) => {
       msg: e.message,
     }));
   }
-  // За потреби: логування
+
   return res.status(statusCode).json({
     success: false,
     message,
