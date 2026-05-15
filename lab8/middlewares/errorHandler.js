@@ -24,6 +24,12 @@ module.exports = (err, req, res, next) => {
       field: e.path,
       msg: e.message,
     }));
+  } else if (err.name === "JsonWebTokenError") {
+    statusCode = 401;
+    message = "Invalid token";
+  } else if (err.name === "TokenExpiredError") {
+    statusCode = 401;
+    message = "Token expired";
   }
 
   return res.status(statusCode).json({

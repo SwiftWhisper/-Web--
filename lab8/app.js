@@ -24,7 +24,9 @@ app.get("/", (req, res) => {
     endpoints: {
       posts: "/api/posts",
       comments: "/api/comments",
-      registration: "/api/register",
+      registration: "/api/auth/register",
+      authentication: "/api/auth/login",
+      myProfile: "/api/auth/me",
     },
   });
 });

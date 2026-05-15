@@ -13,5 +13,8 @@ class ApiError extends Error {
   static conflict(message = "Conflict", errors = null) {
     return new ApiError(409, message, errors);
   }
+  static unauthorized(message = "Unathorize", errors = null) {
+    return new ApiError(401, message, errors);
+  }
 }
 module.exports = ApiError;
